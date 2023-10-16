@@ -10,21 +10,20 @@ app.get("/firstapi", (request, response) => {
     name: "sanduranga",
     age: 26,
     gender: "male",
-    subjects: [
-      { subject1: "maths", marks1: 68 },
-      { subject2: "chemistry", marks2: 80 },
-      { subject3: "physics", marks3: 90 },
-    ],
+    subject1: "maths",
+    marks1: 68,
+    subject2: "chemistry",
+    marks2: 80,
+    subject3: "physics",
+    marks3: 90,
   });
 });
 
 app.post("/firstapi", async (request, response) => {
   try {
     if (!request.body.name || !request.body.age || !request.body.gender) {
-      console.log("aaaa");
       response.send("err");
     } else {
-      console.log("ssss");
       const newStudent = {
         name: request.body.name,
         age: request.body.age,
